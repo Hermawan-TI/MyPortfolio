@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermawan — Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Hermawan — Informatics Engineering student and Full Stack Web Developer at Universitas Maritim Raja Ali Haji." />
+  <meta property="og:title" content="Hermawan — Full Stack Developer" />
+  <meta property="og:description" content="Full Stack Developer based in Tanjungpinang, Indonesia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Images/Profil.png" />
+  <link rel="icon" type="image/png" href="Images/logo.png" />
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+      } catch (error) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-primary': '#0A0A0A',
+            'bg-card': '#111827',
+            'accent-cyan': '#06B6D4',
+            'accent-blue': '#3B82F6',
+          },
+          fontFamily: { sans: ['Inter', 'Poppins', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome (skills icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Devicons (tech-specific icons) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <a href="#hero" class="text-xl font-black nav-logo">Hermawan</a>
+
+        <div id="desktop-menu" class="hidden md:flex items-center gap-8">
+          <a href="#hero"         class="nav-link active">Home</a>
+          <a href="#skills"       class="nav-link">Skills</a>
+          <a href="#resume"       class="nav-link">Resume</a>
+          <a href="#projects"     class="nav-link">Projects</a>
+          <a href="#contact"      class="nav-link">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+            <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+            <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+          </button>
+          <button class="hamburger md:hidden" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu">
+        <a href="#hero"         class="mobile-nav-link">Home</a>
+        <a href="#skills"       class="mobile-nav-link">Skills</a>
+        <a href="#resume"       class="mobile-nav-link">Resume</a>
+        <a href="#projects"     class="mobile-nav-link">Projects</a>
+        <a href="#contact"      class="mobile-nav-link">Contact</a>
+        <button id="theme-toggle-mobile" class="mobile-theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+          <span class="theme-toggle-label">Tema Gelap</span>
+          <span class="theme-toggle-track" aria-hidden="true">
+            <i class="fas fa-moon theme-icon-dark"></i>
+            <i class="fas fa-sun theme-icon-light"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24 hero-content w-full">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+        <!-- Kiri: Teks -->
+        <div class="order-2 lg:order-1 w-full min-w-0">
+          <div class="hero-badge hero-badge-desktop">
+            <span class="hero-badge-dot"></span>
+            <span>Open to Opportunities</span>
+          </div>
+
+          <h1 id="hero-name" class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-4 break-words"></h1>
+
+          <div class="text-lg sm:text-2xl font-bold text-gray-300 mb-6 flex items-center" style="min-height:2.5rem;">
+            <span id="typing-profession" class="typing-text"></span>
+            <span class="typing-cursor flex-shrink-0"></span>
+          </div>
+
+          <p id="hero-tagline" class="text-gray-400 text-base mb-10 leading-relaxed" style="text-align:justify;"></p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary"><span><i class="fas fa-envelope mr-2"></i>Contact Me</span></a>
+            <a href="#projects" class="btn-outline"><i class="fas fa-folder-open mr-2"></i>View Projects</a>
+          </div>
+        </div>
+
+        <!-- Kanan: Foto -->
+        <div class="order-1 lg:order-2 flex justify-center reveal fade-up">
+          <div class="hero-photo-stack">
+            <div class="hero-badge hero-badge-mobile">
+              <span class="hero-badge-dot"></span>
+              <span>Open to Opportunities</span>
+            </div>
+            <div class="profile-photo-wrap">
+              <img id="about-photo" src="" alt="Hermawan" class="profile-photo-blend" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="py-16 md:py-24 relative section-home-bg">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal fade-up">
+        <h2 class="section-title">Tech <span class="section-accent">Skills</span></h2>
+        <div class="section-divider mt-4"></div>
+        <p class="text-gray-400 mt-4">Technologies I use to build digital products.</p>
+      </div>
+      <div id="skills-container" class="grid grid-cols-3 sm:grid-cols-7 gap-3 sm:gap-4"></div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume" class="py-16 md:py-24 relative section-home-bg">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12 reveal fade-up">
+        <h2 class="section-title">My <span class="section-accent">Resume</span></h2>
+        <div class="section-divider mt-4"></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center gap-3 mb-12 reveal fade-up flex-wrap">
+        <button class="resume-tab active" data-tab="education">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Education
+        </button>
+        <button class="resume-tab" data-tab="experience">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Experience
+        </button>
+        <button class="resume-tab" data-tab="organization">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Organization
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div id="tab-education"   class="tab-panel">
+        <div id="education-container"   class="flex flex-col"></div>
+      </div>
+      <div id="tab-experience"  class="tab-panel hidden">
+        <div id="experience-container"  class="flex flex-col"></div>
+      </div>
+      <div id="tab-organization" class="tab-panel hidden">
+        <div id="organization-container" class="flex flex-col"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="py-16 md:py-24 relative section-home-bg">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal fade-up">
+        <h2 class="section-title">Featured <span class="section-accent">Projects</span></h2>
+        <div class="section-divider mt-4"></div>
+        <p class="text-gray-400 mt-4">A collection of projects from my academic and personal journey.</p>
+      </div>
+      <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="py-16 md:py-24 relative section-home-bg">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10 reveal fade-up">
+        <h2 class="section-title">Contact <span class="section-accent">Me</span></h2>
+        <div class="section-divider mt-4"></div>
+        <p class="text-gray-400 mt-4">Send a message directly to my email.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-[1.4fr_0.8fr] gap-8 items-start">
+        <form id="contact-form" class="glass-card contact-form reveal fade-up" method="POST" action="https://formspree.io/f/xdargvaw">
+          <input type="hidden" name="_subject" value="New portfolio message" />
+          <input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="contact-name" class="form-label">Name</label>
+              <input id="contact-name" class="form-input" type="text" name="name" placeholder="Your name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="contact-email" class="form-label">Email</label>
+              <input id="contact-email" class="form-input" type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="contact-subject" class="form-label">Subject</label>
+            <input id="contact-subject" class="form-input" type="text" name="subject" placeholder="Project collaboration, question, or opportunity" required />
+          </div>
+
+          <div>
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea id="contact-message" class="form-input form-textarea" name="message" placeholder="Write your message..." rows="6" required></textarea>
+          </div>
+
+          <button id="contact-submit" class="btn-primary contact-submit" type="submit">
+            <span><i class="fas fa-paper-plane mr-2"></i>Send Message</span>
+          </button>
+
+          <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-side reveal fade-up text-center lg:text-left">
+          <div class="contact-side-card glass-card">
+            <h3 class="text-xl font-bold text-white mb-3">Let's work together</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Have a project, internship opportunity, or collaboration idea? Send it here and it will be forwarded to my email.</p>
+            <a id="contact-email-link" class="contact-email-link" href="mailto:hermawan@student.umrah.ac.id">
+              <i class="fas fa-envelope"></i>
+              <span id="contact-email-text">hermawan@student.umrah.ac.id</span>
+            </a>
+          </div>
+
+          <div id="contact-info-container" class="flex justify-center lg:justify-start gap-5 mt-6"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-10 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-center gap-6 mb-6 flex-wrap">
+        <a href="#hero"     class="text-gray-500 hover:text-accent-cyan text-sm transition-colors duration-200">Home</a>
+        <a href="#skills"   class="text-gray-500 hover:text-accent-cyan text-sm transition-colors duration-200">Skills</a>
+        <a href="#resume"   class="text-gray-500 hover:text-accent-cyan text-sm transition-colors duration-200">Resume</a>
+        <a href="#projects" class="text-gray-500 hover:text-accent-cyan text-sm transition-colors duration-200">Projects</a>
+        <a href="#contact"  class="text-gray-500 hover:text-accent-cyan text-sm transition-colors duration-200">Contact</a>
+      </div>
+      <p id="footer-name"      class="text-gray-400 text-sm mb-1"></p>
+      <p id="footer-title"     class="text-gray-500 text-xs mb-4"></p>
+      <p id="footer-copyright" class="text-gray-600 text-xs"></p>
+    </div>
+  </footer>
+
+  <!-- Back To Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/animation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
