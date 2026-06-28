@@ -4,7 +4,7 @@ const DATA = {
   profile: {
     full_name: "Hermawan",
     tagline: "Full Stack Developer",
-    summary: "Sixth-semester Informatics Engineering student at Raja Ali Haji Maritime University (UMRAH) with a passion for Web Development. Experienced in developing frontend and backend web applications using Laravel and CodeIgniter, including building a Static Archive Service System during an internship at the Tanjungpinang City Library and Archives Office. Passionate about creating modern, responsive, and user-friendly web applications while continuously improving technical and problem-solving skills.",
+    summary: "Sixth-semester Informatics Engineering student at Raja Ali Haji Maritime University (UMRAH) with a strong interest in software development and information technology. Experienced in developing frontend and backend web applications using Laravel and CodeIgniter, including building a Static Archive Service System during an internship at the Tanjungpinang City Library and Archives Office. Passionate about designing and developing efficient, user-friendly, and scalable software solutions while continuously improving technical, analytical, and problem-solving skills.",
     photo: "Images/Profil.png",
     email: "hermawan@student.umrah.ac.id",
     github: "https://github.com/Hermawan-TI",
